@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cni-project-4bbcc": {
+      "hosting": {
+        "project-cni": [
+          "cni-project-4bbcc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cni-project-4bbcc"
+  }
+}
