@@ -8,7 +8,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { GridComponent } from './components/grid/grid.component';
-import { PresentationComponent } from './components/presentation/presentation.component';
 import { MascotasComponent } from './components/pages/mascotas/mascotas.component';
 
 //Firebase
@@ -32,7 +31,6 @@ import { AiresComponent } from './components/pages/aires/aires.component';
     NavbarComponent,
     HomeComponent,
     GridComponent,
-    PresentationComponent,
     MascotasComponent,
     FletesComponent,
     RefrigeracionComponent,

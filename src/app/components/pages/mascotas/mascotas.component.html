@@ -1,158 +1,164 @@
-<h1 class="tittle">Lo mejor para tus mascotas</h1>
+<body>
+  <br />
 
-<div class="container">
-  <tr>
-    <td>
-      <form class="row row-cols-sm-auto">
-        <div class="form-body">
-          <div class="row">
-            <div class="form-holder">
-              <div class="form-content">
-                <div class="form-items">
-                  <h3>Lavado y traslado</h3>
-                  <!-- <p>Necesitas trasladar a tu o mascota</p> -->
-                  <label>Ingresa tu nombre y disponibilidad</label>
-                  <form class="requires-validation" novalidate>
-                    <div class="col-md-12">
-                      <input
-                        class="form-control"
-                        type="text"
-                        [(ngModel)]="modelName"
-                        (ngModelChange)="valorInputName($event)"
-                        name="name"
-                        placeholder="Nombre"
-                        required
-                      />
-                    </div>
+  <div class="container">
+    <h2 class="presentacion" style="text-align: center">
+      Traslado de mascotas
+    </h2>
+    <br />
+    <br />
+    <tr>
+      <td>
+        <form>
+          <div style="justify-content: center">
+            <h3 style="text-align: CENTER">Lavado y traslado</h3>
+            <br />
+            <!-- <p>Necesitas trasladar a tu o mascota</p> -->
+            <label style="color: white"
+              >Ingresa tu nombre y disponibilidad</label
+            >
+            <form>
+              <div>
+                <input
+                  class="form-control"
+                  type="text"
+                  [(ngModel)]="modelName"
+                  (ngModelChange)="valorInputName($event)"
+                  name="name"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
 
-                    <div style="margin-top: 16px" class="col-md-12">
-                      <div class="input-group">
-                        <input
-                          class="form-control"
-                          placeholder="Selecciona disponibilidad"
-                          name="dp"
-                          [(ngModel)]="model"
-                          ngbDatepicker
-                          #d="ngbDatepicker"
-                          (ngModelChange)="valorInput($event)"
-                        />
-                        <br />
-                        <button
-                          class="btn btn-outline-secondary calendar"
-                          (click)="d.toggle()"
-                          type="button"
-                        >
-                          <i class="fa-duotone fa-calendar-minus"></i>
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="form-button mt-3">
-                      <i
-                        style="
-                          margin-left: 20%;
-                          font-family: 'Franklin Gothic Medium', 'Arial Narrow',
-                            Arial, sans-serif;
-                          font-size: large;
-                        "
-                        >Envianos tu consulta</i
-                      ><link
-                        rel="stylesheet"
-                        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-                      /><a
-                        href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, mi nombre es {{
-                          mensajeNombre
-                        }} estoy interesado en el lavado de mi mascota el dia Fecha disponible: {{
-                          mensajeDia
-                        }}/{{ mensajeMes }}"
-                        class="fab"
-                        target="_blank"
-                      >
-                        <i class="fa fa-whatsapp my-float"></i>
-                      </a>
-                    </div>
-                  </form>
+              <div style="margin-top: 16px" class="col-md-12">
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    placeholder="Selecciona disponibilidad"
+                    name="dp"
+                    [(ngModel)]="model"
+                    ngbDatepicker
+                    #d="ngbDatepicker"
+                    (ngModelChange)="valorInput($event)"
+                  />
+                  <br />
+                  <button
+                    class="btn btn-outline-secondary calendar"
+                    (click)="d.toggle()"
+                    type="button"
+                  >
+                    <i class="fa-duotone fa-calendar-minus"></i>
+                  </button>
                 </div>
               </div>
-            </div>
+
+              <div class="form-button mt-3" style="text-align: center">
+                ><link
+                  rel="stylesheet"
+                  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+                /><a
+                  href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, mi nombre es {{
+                    mensajeNombre
+                  }} estoy interesado en el lavado de mi mascota el dia Fecha disponible: {{
+                    mensajeDia
+                  }}/{{ mensajeMes }}"
+                  class="fab"
+                  target="_blank"
+                >
+                  <i class="fa fa-whatsapp my-float">ENVIANOS TU CONSULTA</i>
+                </a>
+              </div>
+
+            </form>        
           </div>
-        </div>
-      </form>
-    </td>
-    <td>
-      <form class="row row-cols-sm-auto">
-        <div class="form-body">
-          <div class="row">
-            <div class="form-holder">
-              <div class="form-content">
-                <div class="form-items">
-                  <h3>Compra de alimentos y envios</h3>
-                  <p>¡Selecciona el producto, te lo llevamos</p> 
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-12">
-                        <table class="table table-image">
-                          <thead>
-                            <tr>
-                              <th scope="col">Image</th>
-                              <th scope="col">Articulo</th>
-                              <th scope="col">Precio</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr></tr>
+        </form>
+      </td>
 
-                            <tr *ngFor="let producto of productosMascotas">
-                              <td class="w-25">
-                                <img
-                                  src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
-                                  class="img-fluid img-thumbnail"
-                                  alt="Sheep"
-                                />
-                              </td>
-                              <td>{{ producto.nombre }}</td>
-                              <td>{{ producto.precio | currency }}</td>
-                              <input class="form-check-input" type="checkbox" [checked]="false"  [value]="producto.nombre"  (change)="onChangeCheck($event)">
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+    </tr>
 
-                  <div class="form-button mt-3">
-                    <i
-                      style="
-                        margin-left: 20%;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow',
-                          Arial, sans-serif;
-                        font-size: large;
-                      "
-                      >Envianos tu consulta</i
-                      
-                    ><link
-                      rel="stylesheet"
-                      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-                    /><a
-                      href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{
-                        mensajeProducto[0]
-                      }} {{mensajeProducto[1]}} {{mensajeProducto[2]}} muchas gracias."
-                      class="fab"
-                      target="_blank"
-                    >
-                      <i class="fa fa-whatsapp my-float"></i>
-                    </a>
 
+    <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+    <tr>
+      <td>
+        <form>
+          <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+          </div>
+          <div>
+            
+            <div>
+              <h3 style="text-align: CENTER">Compra de alimentos y envios</h3>
+              <label style="color: white;" 
+                >Selecciona el producto, te lo llevamos!</label
+              >
+              <br>
+              <br>
+              <div class="container">
+                <div style="color:white;" class="row">
+                  <div class="col-12">
+                    <table class="table table-image">
+
+                      <thead>
+                        <tr >
+                          <th style="color:white; text-align: center;" scope="col">Image</th>
+                          <th style="color:white; text-align: center;" scope="col">Articulo</th>
+                          <th style="color:white; text-align: center;" scope="col">Precio</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let producto of productosMascotas">
+                          <td class="w-25">
+                            <img
+                              src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
+                              class="img-fluid img-thumbnail"
+                              alt="Sheep"
+                            />
+                          </td>
+                          <td style="color: white; font-size: larger;">{{ producto.nombre }}</td>
+                          <td style="color: white; font-size: larger;">{{ producto.precio | currency }}</td>
+                          <input 
+                            class="form-check-input"
+                            type="checkbox"
+                            style="border-color: white; margin-top: 110%;"
+                            [checked]="false"
+                            [value]="producto.nombre"
+                            (change)="onChangeCheck($event)"
+                          />
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
+
+              <div class="form-button mt-3" style="text-align: center">
+                ><link
+                  rel="stylesheet"
+                  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+                /><a
+                  href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{
+                    mensajeProducto[0]
+                  }} {{ mensajeProducto[1] }} {{
+                    mensajeProducto[2]
+                  }} muchas gracias."
+                  class="fab"
+                  target="_blank"
+                >
+                  <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
+                </a>
+              </div>
+
+              <br />
+              <br />
             </div>
           </div>
-        </div>
-      </form>
-    </td>
-  </tr>
-</div>
+        </form>
+      </td>
+    </tr>
+  </div>
+</body>
 
 <!-- <ngb-alert class="mt-3 mb-0" type="info" [dismissible]="false">
     You must provide the icon for the button. This allows you

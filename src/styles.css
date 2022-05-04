@@ -76,6 +76,7 @@
   }
 }
 
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -89,9 +90,15 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-image: url('./assets/fondo.jpg');
   background: linear-gradient(rgba(0,0,0,0,6),rgba(0,0,0,0,6)),url('./assets/fondo.jpg');
+  background-size: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-position-y: center;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  padding: 0;
+
 }
 
 hr {
@@ -107,6 +114,7 @@ hr:not([size]) {
 }
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+  color: white;
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -125,6 +133,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
+  color: white;
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -2817,6 +2826,7 @@ textarea.form-control-lg {
   margin-left: -0.125rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: white;
 }
 
 .valid-feedback {
@@ -3941,6 +3951,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
+  padding-right: 0;
   margin-bottom: 0;
   list-style: none;
 }
@@ -5476,6 +5487,8 @@ textarea.form-control-lg {
   word-wrap: break-word;
 }
 
+
+
 .modal {
   position: fixed;
   top: 0;
@@ -6524,7 +6537,7 @@ textarea.form-control-lg {
 }
 
 .fixed-top {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   right: 0;
   left: 0;
@@ -11295,15 +11308,19 @@ html {
 
 .page-section {
   padding: 6rem 0;
+  color: white;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
   line-height: 2rem;
+  color: white;
 }
 @media (min-width: 880px) {
   .page-section .page-section-heading {
     font-size: 1.5rem;
     line-height: 1.5rem;
+    color: white;
+
   }
 }
 
@@ -11318,9 +11335,9 @@ html {
   width: 100%;
   max-width: 7rem;
   height: 0.25rem;
-  background-color: #2c3e50;
+  background-color: #ffff;
   border-radius: 1rem;
-  border-color: #2c3e50;
+  border-color: #ffff;
 }
 .divider-custom .divider-custom-line:first-child {
   margin-right: 1rem;
@@ -11507,4 +11524,21 @@ html {
 
 .copyright {
   background-color: #1a252f;
+}
+
+.fa-solid, .fas {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: white;
+}
+
+
+
+.presentacion{
+  color: white;
+  justify-content: center;
+  text-transform: uppercase !important;
+  padding-left: 2%;
+  background-color: #00000054;
+  border-radius: 20px;
 }

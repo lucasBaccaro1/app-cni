@@ -1,70 +1,88 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-  
-    <td>
-      <form class="row justify-content-center">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg">
-            <div class="form-holder">
-              <div class="form-content">
-                <div style="color: #ffff;">
-                  <h1 class="row justify-content-center" style="color: #ffff;">Compra de articulos de refrigeracion</h1>
-                  <p class="row justify-content-center" style="color: #ffff;">¡Selecciona el producto, te lo llevamos</p> 
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-12">
-                        <table style="color: #ffff;" class="table table-image">
-                          <thead>
-                            <tr >
-                              <th  style="color: #ffff;">Imagen</th>
-                              <th  style="color: #ffff;">Descripcion</th>
-                              <th  style="color: #ffff;">Precio</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr class="row justify-content-center" *ngFor="let producto of productosRefrigeracion">
-                              <td style="color: #ffff;">{{ producto.descripcion }}</td>
-                              <td style="color: #ffff;">{{ producto.precio | currency }}</td>
-                              <input style="border-color: #ffff;" class="form-check-input" type="checkbox" [checked]="false"  [value]="producto.nombre"  (change)="onChangeCheck($event)">
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
+<body>
+  <br />
 
-                  <div class="form-button mt-3">
-                    <i
-                      style="
-                        margin-left: 20%;
-                        font-family: 'Franklin Gothic Medium', 'Arial Narrow',
-                          Arial, sans-serif;
-                        font-size: large;
-                      "
-                      >Envianos tu consulta</i
-                      
-                    ><link
-                      rel="stylesheet"
-                      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-                    /><a
-                      href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A muchas gracias."
-                      class="fab"
-                      target="_blank"
-                    >
-                      <i class="fa fa-whatsapp my-float"></i>
-                    </a>
+  <div class="container">
+    <h2 class="presentacion" style="text-align: center">
+      Productos de Refrigeracion
+    </h2>
+  </div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+  <div>
+    <div>
+      <h3 style="text-align: CENTER">Compra de productos de refrigeracion </h3>
+     
+      <br />
+      <br />
+      <div class="container">
+        <label style="color: white"
+        >Selecciona el producto, te lo llevamos!</label
+      >
+        <div style="color: white" class="row">
+          <div style="text-align: center">
+            <table class="table table-image">
+              <thead>
+                <tr>
+                  <th style="color: white; text-align: center" scope="col">
+                    Image
+                  </th>
+                  <th style="color: white; text-align: center" scope="col">
+                    Articulo
+                  </th>
+                  <th style="color: white; text-align: center" scope="col">
+                    Precio
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let producto of productosRefrigeracion">
+                  <td class="w-25">
+                    <img
+                      src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
+                      class="img-fluid img-thumbnail"
+                      alt="Sheep"
+                    />
+                  </td>
+                  <td style="color: white; font-size: larger">
+                    {{ producto.descripcion }}
+                  </td>
+                  <td style="color: white; font-size: larger">
+                    {{ producto.precio | currency }}
+                  </td>
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    style="border-color: white; margin-top: 110%"
+                    [checked]="false"
+                    [value]="producto.nombre"
+                    (change)="onChangeCheck($event)"
+                  />
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </form>
+      </div>
 
-</div>
+      <div class="form-button mt-3" style="text-align: center">
+        ><link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        /><a
+          href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A muchas gracias."
+          class="fab"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
+        </a>
+      </div>
+
+      <br />
+      <br />
+    </div>
+  </div>
+</body>

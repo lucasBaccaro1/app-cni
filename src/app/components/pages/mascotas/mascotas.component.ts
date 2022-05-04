@@ -13,6 +13,7 @@ export class MascotasComponent implements OnInit {
 model: NgbDateStruct | undefined;
 modelName: any;
 mensajeNombre: any;
+
 mensajeDia: any;
 mensajeMes: any;
 

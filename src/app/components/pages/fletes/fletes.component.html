@@ -1,1 +1,95 @@
-<p>fletes works!</p>
+<body>
+    <br />
+
+  <div class="container">
+    <h2 class="presentacion" style="text-align: center">
+      Necesitas un flete
+    </h2>
+  </div>
+
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+  <div>
+    <div>
+      <h3 style="text-align: CENTER">Completa tus datos! </h3>
+     
+      <br />
+      <br />
+      <div class="container">
+      >
+        <div style="color: white" class="row">
+          <div style="text-align: center">
+            
+            <form>
+                <div>
+                  <input
+                    class="form-control"
+                    type="text"
+                    [(ngModel)]="modelOrigen"
+                    (ngModelChange)="valorInputOirgen($event)"
+                    name="origen"
+                    placeholder="Origen direccion exacta"
+                    required
+                  />
+                </div>
+
+                <div style="margin-top: 16px">
+                    <input
+                      class="form-control"
+                      type="text"
+                      [(ngModel)]="modelDestino"
+                      (ngModelChange)="valorInputDestino($event)"
+                      name="destino"
+                      placeholder="Destino direccion exacta"
+                      required
+                    />
+                  </div>
+
+
+                  <div style="margin-top: 16px" class="col-md-12">
+                    <div class="input-group">
+                      <input
+                        class="form-control"
+                        placeholder="Selecciona disponibilidad"
+                        name="dp"
+                        [(ngModel)]="model"
+                        ngbDatepicker
+                        #d="ngbDatepicker"
+                        (ngModelChange)="valorInputDisponibilidad($event)"
+                      />
+                      <br />
+                      <button
+                        class="btn btn-outline-secondary calendar"
+                        (click)="d.toggle()"
+                        type="button"
+                      >
+                        <i class="fa-duotone fa-calendar-minus"></i>
+                      </button>
+                    </div>
+                  </div>  
+  
+            </form>    
+            </div>
+        </div>
+      </div>
+      <div class="form-button mt-3" style="text-align: center">
+        ><link
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+        /><a
+          href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el siguiente viaje. %0D%0A Desde {{mensajeOrigen}} hasta {{mensajeDestino}} y mi disponibilidad la tengo el dia {{mensajeDia}} de este mes. %0D%0A Muchas gracias."
+          class="fab"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp my-float">CONSULTA COTIZACION</i>
+        </a>
+      </div>
+
+      <br />
+      <br />
+    </div>
+  </div>
+</body>
