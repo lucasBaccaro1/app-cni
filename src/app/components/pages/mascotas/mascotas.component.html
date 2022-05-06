@@ -1,233 +1,121 @@
 <body>
-  <br />
 
-  <div class="container">
-    <h2 style="text-align: center">Traslado de mascotas</h2>
-    <br />
-    <div>
-      <ngx-spinner
-        bdColor="rgba(0, 0, 0, 1)"
-        template="<img src='https://media3.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e47l1aof4gzmtyeryixu0ndgrfdz545xryot6axd2qk&rid=giphy.gif&ct=g' />"
-      >
-      </ngx-spinner>
-    </div>
-    <br />
-    <tr>
-      <td>
-        <div class="d-flex justify-content-center">
-          <form class="form">
-            <div style="justify-content: center">
-              <h3 style="text-align: CENTER">Lavado y traslado</h3>
-              <br />
-              <!-- <p>Necesitas trasladar a tu o mascota</p> -->
-              <label style="color: white"
-                >Ingresa tu nombre y disponibilidad</label
-              >
 
-              <div>
-                <input
-                  class="form-control"
-                  type="text"
-                  [(ngModel)]="modelName"
-                  (ngModelChange)="valorInputName($event)"
-                  name="name"
-                  placeholder="Nombre"
-                  required
-                />
-              </div>
-
-              <div style="margin-top: 16px" class="col-md-12">
-                <div class="input-group">
-                  <input
-                    class="form-control"
-                    placeholder="Selecciona disponibilidad"
-                    name="dp"
-                    [(ngModel)]="model"
-                    ngbDatepicker
-                    #d="ngbDatepicker"
-                    (ngModelChange)="valorInput($event)"
-                  />
-                  <br />
-                  <button
-                    style="background-color: white"
-                    class="btn"
-                    (click)="d.toggle()"
-                    type="button"
-                  >
-                    <i class="far fa-calendar-minus"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="form-button mt-3" style="text-align: center">
-                ><link
-                  rel="stylesheet"
-                  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-                /><a
-                  href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, mi nombre es {{
-                    mensajeNombre
-                  }} estoy interesado en el lavado de mi mascota el dia Fecha disponible: {{
-                    mensajeDia
-                  }}/{{ mensajeMes }}"
-                  class="fab"
-                  target="_blank"
-                >
-                  <i class="fa fa-whatsapp my-float">ENVIANOS TU CONSULTA</i>
-                </a>
-              </div>
-            </div>
-          </form>
-        </div>
-      </td>
-    </tr>
-
-    <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
-    <tr>
-      <td>
-        <form>
-          <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
-          </div>
-          <div>
-            <div class="container">
-              <h3 style="text-align: CENTER">Compra de alimentos y envios</h3>
-              <br />
-              <h3 style="color: white; text-align: CENTER">
-                Selecciona el producto, te lo llevamos!
-              </h3>
-              <br />
-              <br />
-              <div class="container">
-                <div style="color: white" class="row">
-                  <div class="col-12">
-                    <table class="table table-image">
-                      <thead>
-                        <tr>
-                          <th
-                            style="color: white; text-align: center"
-                            scope="col"
-                          >
-                            Image
-                          </th>
-                          <th
-                            style="color: white; text-align: center"
-                            scope="col"
-                          >
-                            Articulo
-                          </th>
-                          <th
-                            style="color: white; text-align: center"
-                            scope="col"
-                          >
-                            Precio
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let producto of productosMascotas">
-                          <td class="w-25">
-                            <img
-                              src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
-                              class="img-fluid img-thumbnail"
-                              alt="Sheep"
-                            />
-                          </td>
-                          <td
-                            style="
-                              color: white;
-                              font-size: larger;
-                              text-align: center;
-                            "
-                          >
-                            {{ producto.nombre }}
-                          </td>
-                          <td
-                            style="
-                              color: white;
-                              font-size: larger;
-                              text-align: center;
-                            "
-                          >
-                            {{ producto.precio | currency }}
-                          </td>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            style="border-color: white; margin-top: 110%"
-                            [checked]="false"
-                            [value]="producto.nombre"
-                            (change)="onChangeCheck($event)"
-                          />
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-button mt-3" style="text-align: center">
-                ><link
-                  rel="stylesheet"
-                  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-                /><a
-                  href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{
-                    mensajeProducto[0]
-                  }} {{ mensajeProducto[1] }} {{
-                    mensajeProducto[2]
-                  }} muchas gracias."
-                  class="fab"
-                  target="_blank"
-                >
-                  <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
-                </a>
-              </div>
-
-              <br />
-              <br />
-            </div>
-          </div>
-        </form>
-      </td>
-    </tr>
+  <div>
+    <ngx-spinner bdColor="rgba(0, 0, 0, 1)"
+      template="<img src='https://media3.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e47l1aof4gzmtyeryixu0ndgrfdz545xryot6axd2qk&rid=giphy.gif&ct=g' />">
+    </ngx-spinner>
   </div>
+
+
+
+  <h2 class="title" style="text-align: center;">Traslado de mascotas</h2>
+  <div class="container">
+
+    <div class="d-flex justify-content-center">
+
+      <form class="form">
+
+        <h3 class="presentacion" style="text-align: CENTER">Lavado y traslado</h3>
+        <br />
+
+        <label class="presentacion" style="color: white">Ingresa tu nombre y disponibilidad</label>
+
+        <div>
+          <input class="form-control" type="text" [(ngModel)]="modelName" (ngModelChange)="valorInputName($event)"
+            name="name" placeholder="Nombre" required />
+        </div>
+
+        <div style="margin-top: 16px" class="col-md-12">
+          <div class="input-group">
+            <input class="form-control" placeholder="Selecciona disponibilidad" name="dp" [(ngModel)]="model"
+              ngbDatepicker #d="ngbDatepicker" (ngModelChange)="valorInput($event)" />
+            <br />
+            <button style="background-color: white" class="btn" (click)="d.toggle()" type="button">
+              <i class="far fa-calendar-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-button mt-3" style="text-align: center">
+          >
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><a
+            href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, mi nombre es {{
+              mensajeNombre
+            }} estoy interesado en el lavado de mi mascota el dia Fecha disponible: {{
+              mensajeDia
+            }}/{{ mensajeMes }}" class="fab" target="_blank">
+            <i class="fa fa-whatsapp my-float">ENVIANOS TU CONSULTA</i>
+          </a>
+        </div>
+      </form>
+    </div>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <h3 style="text-align: center;" class="title">Compra de alimentos y envios</h3>
+    <h3 style="color: white; text-align: CENTER" class="presentacion">
+      Selecciona el producto, te lo llevamos!
+    </h3>
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th style="color: white; text-align: center" scope="col">
+            Image
+          </th>
+          <th style="color: white; text-align: center" scope="col">
+            Articulo
+          </th>
+          <th style="color: white; text-align: center" scope="col">
+            Precio
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr *ngFor="let producto of productosMascotas">
+          <td class="w-25">
+            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
+              class="img-fluid img-thumbnail" alt="Sheep" />
+          </td>
+          <td style="
+                color: white;
+                font-size: larger;
+                text-align: center;
+              ">
+            {{ producto.nombre }}
+          </td>
+          <td style="
+                color: white;
+                font-size: larger;
+                text-align: center;
+                
+              ">
+            {{ producto.precio | currency }}
+          </td>
+          <input class="form-check-input" type="checkbox" style="border-color: white" [checked]="false"
+            [value]="producto.nombre" (change)="onChangeCheck($event)" />
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="form-button mt-3" style="text-align: center">
+      >
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><a
+        href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{
+          mensajeProducto[0]
+        }} {{ mensajeProducto[1] }} {{
+          mensajeProducto[2]
+        }} muchas gracias." class="fab" target="_blank">
+        <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
+      </a>
+    </div>
+    <br>
+    <br>
+  </div>
+
 </body>
-
-<!-- <ngb-alert class="mt-3 mb-0" type="info" [dismissible]="false">
-    You must provide the icon for the button. This allows you
-    to choose an icon that matches your application's style.
-    In this example, the icon is set via a CSS class.
-  </ngb-alert> -->
-
-<!-- <div class="col-md-12">
-                            <select class="form-select mt-3" required>
-                                  <option selected disabled value="">Position</option>
-                                  <option value="jweb">Junior Web Developer</option>
-                                  <option value="sweb">Senior Web Developer</option>
-                                  <option value="pmanager">Project Manager</option>
-                           </select>
-                            <div class="valid-feedback">You selected a position!</div>
-                            <div class="invalid-feedback">Please select a position!</div>
-                       </div> -->
-
-<!-- <div class="col-md-12 mt-3">
-                        <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-                        <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-
-                        <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                        <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
-                           <div class="valid-feedback mv-up">You selected a gender!</div>
-                            <div class="invalid-feedback mv-up">Please select a gender!</div>
-                        </div> -->
-
-<!-- <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label">I confirm that all data are correct</label>
-                     <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                    </div> -->
