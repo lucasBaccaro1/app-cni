@@ -2,22 +2,28 @@
   <br />
 
   <div class="container">
-    <h2 class="presentacion" style="text-align: center">
-      Traslado de mascotas
-    </h2>
+    <h2 style="text-align: center">Traslado de mascotas</h2>
     <br />
+    <div>
+      <ngx-spinner
+        bdColor="rgba(0, 0, 0, 1)"
+        template="<img src='https://media3.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e47l1aof4gzmtyeryixu0ndgrfdz545xryot6axd2qk&rid=giphy.gif&ct=g' />"
+      >
+      </ngx-spinner>
+    </div>
     <br />
     <tr>
       <td>
-        <form>
-          <div style="justify-content: center">
-            <h3 style="text-align: CENTER">Lavado y traslado</h3>
-            <br />
-            <!-- <p>Necesitas trasladar a tu o mascota</p> -->
-            <label style="color: white"
-              >Ingresa tu nombre y disponibilidad</label
-            >
-            <form>
+        <div class="d-flex justify-content-center">
+          <form class="form">
+            <div style="justify-content: center">
+              <h3 style="text-align: CENTER">Lavado y traslado</h3>
+              <br />
+              <!-- <p>Necesitas trasladar a tu o mascota</p> -->
+              <label style="color: white"
+                >Ingresa tu nombre y disponibilidad</label
+              >
+
               <div>
                 <input
                   class="form-control"
@@ -43,11 +49,12 @@
                   />
                   <br />
                   <button
-                    class="btn btn-outline-secondary calendar"
+                    style="background-color: white"
+                    class="btn"
                     (click)="d.toggle()"
                     type="button"
                   >
-                    <i class="fa-duotone fa-calendar-minus"></i>
+                    <i class="far fa-calendar-minus"></i>
                   </button>
                 </div>
               </div>
@@ -68,14 +75,11 @@
                   <i class="fa fa-whatsapp my-float">ENVIANOS TU CONSULTA</i>
                 </a>
               </div>
-
-            </form>        
-          </div>
-        </form>
+            </div>
+          </form>
+        </div>
       </td>
-
     </tr>
-
 
     <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
     <tr>
@@ -87,24 +91,38 @@
             <div class="divider-custom-line"></div>
           </div>
           <div>
-            
-            <div>
+            <div class="container">
               <h3 style="text-align: CENTER">Compra de alimentos y envios</h3>
-              <label style="color: white;" 
-                >Selecciona el producto, te lo llevamos!</label
-              >
-              <br>
-              <br>
+              <br />
+              <h3 style="color: white; text-align: CENTER">
+                Selecciona el producto, te lo llevamos!
+              </h3>
+              <br />
+              <br />
               <div class="container">
-                <div style="color:white;" class="row">
+                <div style="color: white" class="row">
                   <div class="col-12">
                     <table class="table table-image">
-
                       <thead>
-                        <tr >
-                          <th style="color:white; text-align: center;" scope="col">Image</th>
-                          <th style="color:white; text-align: center;" scope="col">Articulo</th>
-                          <th style="color:white; text-align: center;" scope="col">Precio</th>
+                        <tr>
+                          <th
+                            style="color: white; text-align: center"
+                            scope="col"
+                          >
+                            Image
+                          </th>
+                          <th
+                            style="color: white; text-align: center"
+                            scope="col"
+                          >
+                            Articulo
+                          </th>
+                          <th
+                            style="color: white; text-align: center"
+                            scope="col"
+                          >
+                            Precio
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
@@ -116,12 +134,28 @@
                               alt="Sheep"
                             />
                           </td>
-                          <td style="color: white; font-size: larger;">{{ producto.nombre }}</td>
-                          <td style="color: white; font-size: larger;">{{ producto.precio | currency }}</td>
-                          <input 
+                          <td
+                            style="
+                              color: white;
+                              font-size: larger;
+                              text-align: center;
+                            "
+                          >
+                            {{ producto.nombre }}
+                          </td>
+                          <td
+                            style="
+                              color: white;
+                              font-size: larger;
+                              text-align: center;
+                            "
+                          >
+                            {{ producto.precio | currency }}
+                          </td>
+                          <input
                             class="form-check-input"
                             type="checkbox"
-                            style="border-color: white; margin-top: 110%;"
+                            style="border-color: white; margin-top: 110%"
                             [checked]="false"
                             [value]="producto.nombre"
                             (change)="onChangeCheck($event)"

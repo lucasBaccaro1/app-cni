@@ -23,6 +23,9 @@ import { FletesComponent } from './components/pages/fletes/fletes.component';
 import { RefrigeracionComponent } from './components/pages/refrigeracion/refrigeracion.component';
 import { OportunidadesComponent } from './components/pages/oportunidades/oportunidades.component';
 import { AiresComponent } from './components/pages/aires/aires.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { AiresComponent } from './components/pages/aires/aires.component';
     NgbModule,
     FormsModule,
     AngularFireModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

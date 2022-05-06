@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ProductosService } from 'src/app/services/productos.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-mascotas',
@@ -24,11 +24,23 @@ mensajeFinal : any ;
 
 productosMascotas: any[] = [];
 
-constructor(private _productosMascotasService: ProductosService) {}
+constructor(private _productosMascotasService: ProductosService,private spinner: NgxSpinnerService) {}
 
 ngOnInit(): void {
   this.getProductosMascotas();
+
+
+  this.spinner.show();
+
+  setTimeout(() => {
+    /** spinner ends after 5 seconds */
+    this.spinner.hide();
+  }, 2000);
+
+  
 }
+
+
 
 
 getProductosMascotas(){
