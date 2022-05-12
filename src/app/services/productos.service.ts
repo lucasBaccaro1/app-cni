@@ -17,4 +17,8 @@ export class ProductosService {
   getProductosRefrigeracionService() : Observable<any>{
     return this.firestore.collection('productosRefrigeracionBD').snapshotChanges();
   }
+  
+  getProductosOportunidadesService() : Observable<any>{
+    return this.firestore.collection('productosOportunidades').snapshotChanges();
+  }
 }

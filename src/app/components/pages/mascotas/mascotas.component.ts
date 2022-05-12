@@ -40,22 +40,19 @@ ngOnInit(): void {
   
 }
 
-
-
-
 getProductosMascotas(){
 
   this._productosMascotasService.getProductosMascotaService().subscribe(data =>{
     this.productosMascotas = [];
     data.forEach((element:any) => {
-      // console.log(element.payload.doc.id)
-      // console.log(data);
+      console.log(element.payload.doc.id)
+      //console.log(data);
       this.productosMascotas.push({
         id: element.payload.doc.id,
         ...element.payload.doc.data()
       })
     });
-    //console.log(this.productosMascotas )
+    console.log(this.productosMascotas)
   })
 }
 
@@ -66,12 +63,11 @@ onChangeCheck($event:any){
   }else{
     this.mensajeProducto.splice( this.mensajeProducto.indexOf($event.target.value),1)
   }
-  console.log(this.mensajeProducto.toString())
+  this.mensajeFinal = this.mensajeProducto.join("-")
+  
+  console.log(this.mensajeFinal)
 }
 
-onItemChange(value : any){
-  console.log(" Value is : ", value );
-}
 //Consigo el dia y la fecha
 valorInput(valorInput: NgbDateStruct) {
   this.mensajeDia = valorInput.day;

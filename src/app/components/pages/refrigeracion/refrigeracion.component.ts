@@ -10,26 +10,28 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class RefrigeracionComponent implements OnInit {
 
+  mensajeProducto: any[] = [];
+  mensajeFinal: any;
 
   productosRefrigeracion: any[] = [];
+  constructor(private _productosRefrigeracionService: ProductosService, private spinner: NgxSpinnerService) { }
 
-  modelName: any
-  constructor(private _productosRefrigeracionService: ProductosService,private spinner: NgxSpinnerService) { }
+  ngOnInit(): void {
+    this.getProductosRefrigeracion();
 
+    this.spinner.show();
 
-  onChangeCheck($event : any){
-
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 2000);
   }
 
-  valorInputName($event:any){
+  getProductosRefrigeracion() {
 
-  }
-
-  getProductosRefrigeracion(){
-
-    this._productosRefrigeracionService.getProductosRefrigeracionService().subscribe(data =>{
+    this._productosRefrigeracionService.getProductosRefrigeracionService().subscribe(data => {
       this.productosRefrigeracion = [];
-      data.forEach((element:any) => {
+      data.forEach((element: any) => {
         // console.log(element.payload.doc.id)
         // console.log(data);
         this.productosRefrigeracion.push({
@@ -40,15 +42,19 @@ export class RefrigeracionComponent implements OnInit {
       //console.log(this.productosMascotas )
     })
   }
-  ngOnInit(): void {
-    this.getProductosRefrigeracion();
 
-    this.spinner.show();
+  onChangeCheck($event: any) {
+    if($event.target.checked == true){
+      this.mensajeProducto.push($event.target.value)
+    }else{
+      this.mensajeProducto.splice( this.mensajeProducto.indexOf($event.target.value),1)
+    }
+    this.mensajeFinal = this.mensajeProducto.join("-")
+    console.log(this.mensajeFinal)
+  }
 
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 2000);
+  onItemChange(value : any){
+    console.log(" Value is : ", value );
   }
 
 }

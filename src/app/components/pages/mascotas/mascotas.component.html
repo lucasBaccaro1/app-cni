@@ -50,72 +50,75 @@
         </div>
       </form>
     </div>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
 
-    <h3 style="text-align: center;" class="title">Compra de alimentos y envios</h3>
-    <h3 style="color: white; text-align: CENTER" class="presentacion">
-      Selecciona el producto, te lo llevamos!
-    </h3>
-    <table class="table table-borderless">
-      <thead>
-        <tr>
-          <th style="color: white; text-align: center" scope="col">
-            Image
-          </th>
-          <th style="color: white; text-align: center" scope="col">
-            Articulo
-          </th>
-          <th style="color: white; text-align: center" scope="col">
-            Precio
-          </th>
-        </tr>
-      </thead>
-      <tbody>
+  </div>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+
+  <h3 style="text-align: center;" class="title">Compra de alimentos y envios</h3>
+  <h3 style="color: white; text-align: CENTER" class="presentacion">
+    Selecciona el producto, te lo llevamos!
+  </h3>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th style="color: white; text-align: center" scope="col">
+          Image
+        </th>
+        <th style="color: white; text-align: center" scope="col">
+          Articulo
+        </th>
+        <th style="color: white; text-align: center" scope="col">
+          Precio
+        </th>
+      </tr>
+    </thead>
+    <tbody>
 
 
-        <tr *ngFor="let producto of productosMascotas">
-          <td class="w-25">
-            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg"
-              class="img-fluid img-thumbnail" alt="Sheep" />
-          </td>
-          <td style="
+      <tr *ngFor="let producto of productosMascotas">
+        <td class="w-25">
+          <img style="display: block;
+                    margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px"  />
+        </td>
+        <td style="
                 color: white;
                 font-size: larger;
                 text-align: center;
               ">
-            {{ producto.nombre }}
-          </td>
-          <td style="
+          {{ producto.nombre }}
+        </td>
+        <td style="
                 color: white;
                 font-size: larger;
                 text-align: center;
                 
               ">
-            {{ producto.precio | currency }}
-          </td>
-          <input class="form-check-input" type="checkbox" style="border-color: white" [checked]="false"
-            [value]="producto.nombre" (change)="onChangeCheck($event)" />
-        </tr>
-      </tbody>
-    </table>
+          {{ producto.precio | currency }}
+          <label class="toggler-wrapper style-1">
+            <input type="checkbox"  [checked]="false"
+            [value]="producto.nombre" (change)="onChangeCheck($event)">
+            <div class="toggler-slider">
+              <div class="toggler-knob"></div>
+            </div>
+          </label>
+      </tr>
+    </tbody>
+  </table>
 
-    <div class="form-button mt-3" style="text-align: center">
-      >
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><a
-        href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{
-          mensajeProducto[0]
-        }} {{ mensajeProducto[1] }} {{
-          mensajeProducto[2]
-        }} muchas gracias." class="fab" target="_blank">
-        <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
-      </a>
-    </div>
-    <br>
-    <br>
+  <div class="form-button mt-3" style="text-align: center">
+    >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" /><a
+      href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: %0D%0A {{mensajeFinal}}  muchas gracias."
+      class="fab" target="_blank">
+      <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
+    </a>
   </div>
+  <br>
+  <br>
+
 
 </body>
