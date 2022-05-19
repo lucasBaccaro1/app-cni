@@ -65,8 +65,9 @@
   
   <br />
   <br />
-  <table class="table table-borderless">
-    <thead>
+  
+    <table style="justify-content: center;" class="rwd-table">
+
       <tr>
         <th style="color: white; text-align: center" scope="col">
           Image
@@ -78,27 +79,21 @@
           Precio
         </th>
       </tr>
-    </thead>
-    <tbody>
-
-
-      <tr *ngFor="let producto of productosMascotas">
+      
+      <tr style="text-align: center;" *ngFor="let producto of productosMascotas">
         <td class="w-25">
-          <img style="display: block;
+          <img style="display: block ; 
                     margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px"  />
         </td>
         <td style="
                 color: white;
                 font-size: larger;
-                text-align: center;
               ">
           {{ producto.nombre }}
         </td>
         <td style="
                 color: white;
                 font-size: larger;
-                text-align: center;
-                
               ">
           {{ producto.precio | currency }}
           <label class="toggler-wrapper style-1">
@@ -109,8 +104,11 @@
             </div>
           </label>
       </tr>
-    </tbody>
-  </table>
+    </table>
+
+
+       
+
 
   <div class="form-button mt-3" style="text-align: center">
     >

@@ -1,4 +1,5 @@
 <body>
+    <br>
     <div class="container">
         <h2 class="title" style="text-align: center">
             Estas son nuestras oportunidades
@@ -22,75 +23,65 @@
     </div>
     <div>
 
-        
-      <br />
-      <br />
 
-        <table class="table table-borderless">
-            <thead>
-                <tr>
-                    <th style="color: white; text-align: center" scope="col">
-                        Producto
-                    </th>
-                    <th style="color: white; text-align: center" scope="col">
-                        Oportunidad
-                    </th>
-                    <th style="color: white; text-align: center" scope="col">
-                        Precio
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
+        <br />
+        <br />
+        <table style="justify-content: center;" class="rwd-table">
 
+            <tr>
+                <th style="color: white; text-align: center" scope="col">
+                    Producto
+                </th>
+                <th style="color: white; text-align: center" scope="col">
+                    Oportunidad
+                </th>
+                <th style="color: white; text-align: center" scope="col">
+                    Precio
+                </th>
+            </tr>
 
-                <tr *ngFor="let producto of productosOportunidades">
-                    <td class="w-25">
-                        <img style="display: block;
-                    margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px" />
+            <tr *ngFor="let producto of productosOportunidades">
+                <td class="w-25">
+                    <img style="display: block;
+                margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px" />
 
-                    </td>
-                    <td style="
-                      color: white;
-                      font-size: larger;
-                      text-align: center;
-                    ">
-                        {{ producto.oportunidad }}
+                </td>
+                <td style="
+                  color: white;
+                  font-size: larger;
 
-                    </td>
-                    <td style="
-                      color: white;
-                      font-size: larger;
-                      text-align: center;
-                      
-                    ">
+                ">
+                    {{ producto.oportunidad }}
 
-                        {{ producto.precio | currency }}
-                        <label class="toggler-wrapper style-1">
-                            <input type="checkbox" [checked]="false" [value]="producto.oportunidad"
-                                (change)="onChangeCheck($event)">
-                            <div class="toggler-slider">
-                                <div class="toggler-knob"></div>
-                            </div>
-                        </label>
-                    </td>
-                </tr>
-            </tbody>
+                </td>
+                <td style="
+                  color: white;
+                  font-size: larger;
+                  
+                ">
+
+                    {{ producto.precio | currency }}
+                    <label class="toggler-wrapper style-1">
+                        <input type="checkbox" [checked]="false" [value]="producto.oportunidad"
+                            (change)="onChangeCheck($event)">
+                        <div class="toggler-slider">
+                            <div class="toggler-knob"></div>
+                        </div>
+                    </label>
+                </td>
+            </tr>
         </table>
 
         <div class="form-button mt-3" style="text-align: center">
-            ><link
-              rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-            /><a
-              href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: {{mensajeFinal}} %0D%0A muchas gracias."
-              class="fab"
-              target="_blank"
             >
-              <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+            <a href="https://api.whatsapp.com/send?phone=+541126518411&text= Hola, estoy interesado en el/los siguientes productos: {{mensajeFinal}} %0D%0A muchas gracias."
+                class="fab" target="_blank">
+                <i class="fa fa-whatsapp my-float">CONSULTA STOCK</i>
             </a>
-          </div>
-    
-          <br />
-          <br />
+        </div>
+
+        <br />
+        <br />
     </div>
 </body>

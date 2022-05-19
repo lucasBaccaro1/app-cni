@@ -1,4 +1,5 @@
 <body>
+  <br>
   <div class="container">
     <h2 class="title" style="text-align: center">
       Productos de Refrigeracion
@@ -22,46 +23,45 @@
  
       <div style="color: white" class="row">
         <div style="text-align: center">
-          <table class="table table-borderless">
-            <thead>
-              <tr>
-                <th style="color: white; text-align: center" scope="col">
-                  Image
-                </th>
-                <th style="color: white; text-align: center" scope="col">
-                  Articulo
-                </th>
-                <th style="color: white; text-align: center" scope="col">
-                  Precio
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let producto of productosRefrigeracion">
-                <td class="w-25">
-                  <img style="display: block;
-                    margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px" />
-                </td>
-                <td style="color: white; font-size: larger ; text-align: center">
-                  {{ producto.descripcion }}
-                </td>
-                <td style="color: white; font-size: larger; text-align: center ">
-                  {{ producto.precio | currency }}
 
-                </td>
-                <td>
-                  <label class="toggler-wrapper style-1">
-                    <input type="checkbox" [checked]="false" [value]="producto.descripcion"
-                      (change)="onChangeCheck($event)">
-                    <div class="toggler-slider">
-                      <div class="toggler-knob"></div>
-                    </div>
-                  </label>
-                </td>
+          <table style="justify-content: center;" class="rwd-table">
 
-              </tr>
-            </tbody>
-          </table>
+            <tr>
+              <th style="color: white; text-align: center" scope="col">
+                Image
+              </th>
+              <th style="color: white; text-align: center" scope="col">
+                Articulo
+              </th>
+              <th style="color: white; text-align: center" scope="col">
+                Precio
+              </th>
+            </tr>
+
+            <tr *ngFor="let producto of productosRefrigeracion">
+              <td class="w-25">
+                <img style="display: block;
+                  margin: 0 auto;" src="{{producto.img}}" width="100px" height="100px" />
+              </td>
+              <td style="color: white; font-size: larger">
+                {{ producto.descripcion }}
+              </td>
+              <td style="color: white; font-size: larger;">
+                {{ producto.precio | currency }}
+
+              </td>
+              <td>
+                <label class="toggler-wrapper style-1">
+                  <input type="checkbox" [checked]="false" [value]="producto.descripcion"
+                    (change)="onChangeCheck($event)">
+                  <div class="toggler-slider">
+                    <div class="toggler-knob"></div>
+                  </div>
+                </label>
+              </td>
+
+            </tr>
+        </table>
         </div>
       </div>
 
