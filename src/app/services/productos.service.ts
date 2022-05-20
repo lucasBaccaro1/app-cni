@@ -21,4 +21,8 @@ export class ProductosService {
   getProductosOportunidadesService() : Observable<any>{
     return this.firestore.collection('productosOportunidades').snapshotChanges();
   }
+
+  getPreciosAires() : Observable<any>{
+    return this.firestore.collection('preciosAires').snapshotChanges();
+  }
 }

@@ -16,64 +16,11 @@
     <div>
       <h3 style="text-align: CENTER">Compra de productos de refrigeracion</h3>
 
-      <!-- 
-      <div class="container">
-
-        <div style="color: white" class="row">
-          <div style="text-align: center">
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <table class="table table-image">
-              <thead>
-                <tr>
-                  <th style="color: white" scope="col">Descripcion</th>
-                  <th style="color: white" scope="col">Sobre piso</th>
-                  <th style="color: white" scope="col">En vacio</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="color: white; font-size: larger">
-                    2200 a 3000 frigorias
-                  </td>
-                  <td style="color: white; font-size: larger">$11.200</td>
-                  <td style="color: white; font-size: larger">$16.000</td>
-                </tr>
-
-                <tr>
-                  <td style="color: white; font-size: larger">
-                    3000 a 4500 frigorias
-                  </td>
-                  <td style="color: white; font-size: larger">$11.900</td>
-                  <td style="color: white; font-size: larger">$17.000</td>
-                </tr>
-                <tr>
-                  <td style="color: white; font-size: larger">
-                    4500 a 6000 frigorias
-                  </td>
-                  <td style="color: white; font-size: larger">$14.875</td>
-                  <td style="color: white; font-size: larger">$6.000</td>
-                </tr>
-                <tr>
-                  <td style="color: white; font-size: larger">
-                    Revision + carga de gas
-                  </td>
-                  <td style="color: white; font-size: larger">$6.000</td>
-                  <td style="color: white; font-size: larger">$8.000</td>
-                </tr>
-                <tr>
-                  <td style="color: white; font-size: larger">Visita</td>
-                  <td style="color: white; font-size: larger;padding-left: 15%;">$600</td>
-                  <td style="color: white; font-size: larger"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div> -->
+      <div>
+        <ngx-spinner bdColor="rgba(0, 0, 0, 1)"
+            template="<img src='https://media3.giphy.com/media/ycfHiJV6WZnQDFjSWH/giphy.gif?cid=ecf05e47l1aof4gzmtyeryixu0ndgrfdz545xryot6axd2qk&rid=giphy.gif&ct=g' />">
+        </ngx-spinner>
+    </div>
 
       <div class="container">
 
@@ -85,28 +32,35 @@
           </tr>
           <tr>
             <td style="color: white; font-size: larger">
-              2200 a 3000 frigorias
+              2200 a 3000 frigorias.
             </td>
-            <td style="color: white; font-size: larger">$11.200</td>
-            <td style="color: white; font-size: larger">$16.000</td>
+            <td style="color: white; font-size: larger">${{precioAires[0].sobrePiso}} </td>
+            <td style="color: white; font-size: larger">${{precioAires[0].enVacio}}</td>
           </tr>
           <tr>
             <td style="color: white; font-size: larger">
-              3000 a 4500 frigorias
+              3000 a 4500 frigorias.
             </td>
-            <td style="color: white; font-size: larger">$11.900</td>
-            <td style="color: white; font-size: larger">$17.000</td>
+            <td style="color: white; font-size: larger">${{precioAires[1].sobrePiso}}</td>
+            <td style="color: white; font-size: larger">${{precioAires[1].enVacio}}</td>
           </tr>
           <tr>
             <td style="color: white; font-size: larger">
-              4500 a 6000 frigorias
+              4500 a 6000 frigorias.
             </td>
-            <td style="color: white; font-size: larger">$14.875</td>
-            <td style="color: white; font-size: larger">$6.000</td>
+            <td style="color: white; font-size: larger">${{precioAires[2].sobrePiso}}</td>
+            <td style="color: white; font-size: larger">${{precioAires[2].enVacio}}</td>
+          </tr>
+          <tr>
+            <td style="color: white; font-size: larger">
+              Reivision + Carga de gas.
+            </td>
+            <td style="color: white; font-size: larger">${{precioAires[3].sobrePiso}}</td>
+            <td style="color: white; font-size: larger">${{precioAires[3].enVacio}}</td>
           </tr>
           <tr>
             <td style="color: white; font-size: larger">Visita</td>
-            <td style="color: white; font-size: larger;padding-left: 15%;">$600</td>
+            <td style="color: white; font-size: larger">${{precioAires[4].precioVisita}}</td>
             <td style="color: white; font-size: larger"></td>
           </tr>
         </table>
