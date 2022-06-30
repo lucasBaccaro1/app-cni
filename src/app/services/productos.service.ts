@@ -11,7 +11,7 @@ export class ProductosService {
   constructor(private firestore : AngularFirestore) { }
 
   getProductosMascotaService() : Observable<any>{
-    return this.firestore.collection('productosBD').snapshotChanges();
+    return this.firestore.collection('productosMascotasBD').snapshotChanges();
   }
 
   getProductosRefrigeracionService() : Observable<any>{
@@ -19,10 +19,10 @@ export class ProductosService {
   }
   
   getProductosOportunidadesService() : Observable<any>{
-    return this.firestore.collection('productosOportunidades').snapshotChanges();
+    return this.firestore.collection('productosOportunidadesBD').snapshotChanges();
   }
 
   getPreciosAires() : Observable<any>{
-    return this.firestore.collection('preciosAires').snapshotChanges();
+    return this.firestore.collection('preciosAireBD').snapshotChanges();
   }
 }
